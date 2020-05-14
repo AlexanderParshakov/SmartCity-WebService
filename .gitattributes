@@ -2,4 +2,4 @@
 * text=auto
 *.css linguist-detectable=false
 *.js linguist-detectable=false
-*.PowerShell linguist-detectable=false
+*.pwsh linguist-detectable=false
