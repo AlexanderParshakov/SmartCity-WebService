@@ -3,3 +3,6 @@
 *.css linguist-detectable=false
 *.js linguist-detectable=false
 *.sch linguist-detectable=false
+*.ps1 linguist-detectable=false
+*.psd1 linguist-detectable=false
+*.psm1 linguist-detectable=false
