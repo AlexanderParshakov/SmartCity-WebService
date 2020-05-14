@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SmartCityModelStoreContainer" CdmEntityContainer="SmartCityEntities">
+    <EntitySetMapping Name="ArtOrganizations">
+      <EntityTypeMapping TypeName="SmartCityModel.ArtOrganization">
+        <MappingFragment StoreEntitySet="ArtOrganization">
+          <ScalarProperty Name="IDOrganization" ColumnName="IDOrganization" />
+          <ScalarProperty Name="ComfortabilityRating" ColumnName="ComfortabilityRating" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="WorkHours" ColumnName="WorkHours" />
+          <ScalarProperty Name="IDPicture" ColumnName="IDPicture" />
+          <ScalarProperty Name="IDBuilding" ColumnName="IDBuilding" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrganizationType" ColumnName="OrganizationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Buildings">
+      <EntityTypeMapping TypeName="SmartCityModel.Building">
+        <MappingFragment StoreEntitySet="Building">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IDObject" ColumnName="IDObject" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="IDBuilding" ColumnName="IDBuilding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Building_Citizen">
+      <EntityTypeMapping TypeName="SmartCityModel.Building_Citizen">
+        <MappingFragment StoreEntitySet="Building_Citizen">
+          <ScalarProperty Name="IDString" ColumnName="IDString" />
+          <ScalarProperty Name="IDBuiding" ColumnName="IDBuiding" />
+          <ScalarProperty Name="IDCitizen" ColumnName="IDCitizen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citizens">
+      <EntityTypeMapping TypeName="SmartCityModel.Citizen">
+        <MappingFragment StoreEntitySet="Citizen">
+          <ScalarProperty Name="IDCitizen" ColumnName="IDCitizen" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citizen_Sensor">
+      <EntityTypeMapping TypeName="SmartCityModel.Citizen_Sensor">
+        <MappingFragment StoreEntitySet="Citizen_Sensor">
+          <ScalarProperty Name="IDString" ColumnName="IDString" />
+          <ScalarProperty Name="IDCitizen" ColumnName="IDCitizen" />
+          <ScalarProperty Name="IDSensor" ColumnName="IDSensor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cook_Restaurant">
+      <EntityTypeMapping TypeName="SmartCityModel.Cook_Restaurant">
+        <MappingFragment StoreEntitySet="Cook_Restaurant">
+          <ScalarProperty Name="IDSrting" ColumnName="IDSrting" />
+          <ScalarProperty Name="IDCook" ColumnName="IDCook" />
+          <ScalarProperty Name="IDRestaurant" ColumnName="IDRestaurant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="SmartCityModel.Dish">
+        <MappingFragment StoreEntitySet="Dishes">
+          <ScalarProperty Name="IDDish" ColumnName="IDDish" />
+          <ScalarProperty Name="DishDescription" ColumnName="DishDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="SmartCityModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="BoxOffice" ColumnName="BoxOffice" />
+          <ScalarProperty Name="IDPicture" ColumnName="IDPicture" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamousCooks">
+      <EntityTypeMapping TypeName="SmartCityModel.FamousCook">
+        <MappingFragment StoreEntitySet="FamousCooks">
+          <ScalarProperty Name="IDFamousCook" ColumnName="IDFamousCook" />
+          <ScalarProperty Name="CookName" ColumnName="CookName" />
+          <ScalarProperty Name="CookQualification" ColumnName="CookQualification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objects">
+      <EntityTypeMapping TypeName="SmartCityModel.Object">
+        <MappingFragment StoreEntitySet="Object">
+          <ScalarProperty Name="IDOdject" ColumnName="IDOdject" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="IDPicture" ColumnName="IDPicture" />
+          <ScalarProperty Name="IDSensor" ColumnName="IDSensor" />
+          <ScalarProperty Name="IDDocument" ColumnName="IDDocument" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjectHasObjects">
+      <EntityTypeMapping TypeName="SmartCityModel.ObjectHasObject">
+        <MappingFragment StoreEntitySet="ObjectHasObject">
+          <ScalarProperty Name="IDString" ColumnName="IDString" />
+          <ScalarProperty Name="IDObjectParent" ColumnName="IDObjectParent" />
+          <ScalarProperty Name="IDObjectChild" ColumnName="IDObjectChild" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="SmartCityModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurant">
+          <ScalarProperty Name="IDOrganization" ColumnName="IDOrganization" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="AverageCheck" ColumnName="AverageCheck" />
+          <ScalarProperty Name="NumberOfEmptyTables" ColumnName="NumberOfEmptyTables" />
+          <ScalarProperty Name="IDFamousCook" ColumnName="IDFamousCook" />
+          <ScalarProperty Name="IDFanciestDish" ColumnName="IDFanciestDish" />
+          <ScalarProperty Name="IDMostPopularDish" ColumnName="IDMostPopularDish" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="IDPicture" ColumnName="IDPicture" />
+          <ScalarProperty Name="WorkHours" ColumnName="WorkHours" />
+          <ScalarProperty Name="IDBuilding" ColumnName="IDBuilding" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurant_Dish">
+      <EntityTypeMapping TypeName="SmartCityModel.Restaurant_Dish">
+        <MappingFragment StoreEntitySet="Restaurant_Dish">
+          <ScalarProperty Name="IDString" ColumnName="IDString" />
+          <ScalarProperty Name="IDRestaurant" ColumnName="IDRestaurant" />
+          <ScalarProperty Name="IDDish" ColumnName="IDDish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sensors">
+      <EntityTypeMapping TypeName="SmartCityModel.Sensor">
+        <MappingFragment StoreEntitySet="Sensor">
+          <ScalarProperty Name="IDSensor" ColumnName="IDSensor" />
+          <ScalarProperty Name="SensorTitle" ColumnName="SensorTitle" />
+          <ScalarProperty Name="SensorDescription" ColumnName="SensorDescription" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+          <ScalarProperty Name="IDLegalAct" ColumnName="IDLegalAct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Showings">
+      <EntityTypeMapping TypeName="SmartCityModel.Showing">
+        <MappingFragment StoreEntitySet="Showing">
+          <ScalarProperty Name="IDShowing" ColumnName="IDShowing" />
+          <ScalarProperty Name="IDOrganization" ColumnName="IDOrganization" />
+          <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DateTimeEvent" ColumnName="DateTimeEvent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SmartCityModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SmartCityEntities-Web.config Connection String" description="SmartCityEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/SmartCityModel.csdl|res://*/SmartCityModel.ssdl|res://*/SmartCityModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=yoursmartcity.database.windows.net;initial catalog=SmartCity;persist security info=True;user id=ap;password=Jus21kUdw*2;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alexander\\source\\repos\\SmartCityWebService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SmartCityEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,16 @@
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\SmartCityDataAccess.dll.config
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\SmartCityDataAccess.dll
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\SmartCityDataAccess.pdb
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\EntityFramework.dll
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\Newtonsoft.Json.dll
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\EntityFramework.xml
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Alexander\source\repos\SmartCityDataAccess\bin\Release\Newtonsoft.Json.xml
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.csprojAssemblyReference.cache
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.csproj.CopyComplete
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.dll
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.pdb
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.Supporting_files.Resources.resources
+C:\Users\Alexander\source\repos\SmartCityDataAccess\obj\Release\SmartCityDataAccess.csproj.GenerateResource.cache

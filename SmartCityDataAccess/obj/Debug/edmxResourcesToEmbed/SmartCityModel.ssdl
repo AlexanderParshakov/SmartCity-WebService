@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SmartCityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ArtOrganization">
+    <Key>
+      <PropertyRef Name="IDOrganization" />
+    </Key>
+    <Property Name="IDOrganization" Type="int" Nullable="false" />
+    <Property Name="ComfortabilityRating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkHours" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDPicture" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDBuilding" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrganizationType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Building">
+    <Key>
+      <PropertyRef Name="IDBuilding" />
+    </Key>
+    <Property Name="IDObject" Type="int" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="House" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDBuilding" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Building_Citizen">
+    <Key>
+      <PropertyRef Name="IDString" />
+    </Key>
+    <Property Name="IDString" Type="int" Nullable="false" />
+    <Property Name="IDBuiding" Type="int" />
+    <Property Name="IDCitizen" Type="int" />
+  </EntityType>
+  <EntityType Name="Citizen">
+    <Key>
+      <PropertyRef Name="IDCitizen" />
+    </Key>
+    <Property Name="IDCitizen" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Citizen_Sensor">
+    <Key>
+      <PropertyRef Name="IDString" />
+    </Key>
+    <Property Name="IDString" Type="int" Nullable="false" />
+    <Property Name="IDCitizen" Type="int" />
+    <Property Name="IDSensor" Type="int" />
+  </EntityType>
+  <EntityType Name="Cook_Restaurant">
+    <Key>
+      <PropertyRef Name="IDSrting" />
+    </Key>
+    <Property Name="IDSrting" Type="int" Nullable="false" />
+    <Property Name="IDCook" Type="int" />
+    <Property Name="IDRestaurant" Type="int" />
+  </EntityType>
+  <EntityType Name="Dishes">
+    <Key>
+      <PropertyRef Name="IDDish" />
+    </Key>
+    <Property Name="IDDish" Type="int" Nullable="false" />
+    <Property Name="DishDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="IDEvent" />
+    </Key>
+    <Property Name="IDEvent" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="BoxOffice" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="IDPicture" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FamousCooks">
+    <Key>
+      <PropertyRef Name="IDFamousCook" />
+    </Key>
+    <Property Name="IDFamousCook" Type="int" Nullable="false" />
+    <Property Name="CookName" Type="varchar" MaxLength="50" />
+    <Property Name="CookQualification" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Object">
+    <Key>
+      <PropertyRef Name="IDOdject" />
+    </Key>
+    <Property Name="IDOdject" Type="int" Nullable="false" />
+    <Property Name="ObjectType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDPicture" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDSensor" Type="int" Nullable="false" />
+    <Property Name="IDDocument" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ObjectHasObject">
+    <Key>
+      <PropertyRef Name="IDString" />
+    </Key>
+    <Property Name="IDString" Type="int" Nullable="false" />
+    <Property Name="IDObjectParent" Type="int" Nullable="false" />
+    <Property Name="IDObjectChild" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="IDOrganization" />
+    </Key>
+    <Property Name="IDOrganization" Type="int" Nullable="false" />
+    <Property Name="Rating" Type="decimal" Precision="2" Scale="1" />
+    <Property Name="AverageCheck" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="NumberOfEmptyTables" Type="int" />
+    <Property Name="IDFamousCook" Type="int" />
+    <Property Name="IDFanciestDish" Type="int" />
+    <Property Name="IDMostPopularDish" Type="int" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDPicture" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkHours" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDBuilding" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Restaurant_Dish">
+    <Key>
+      <PropertyRef Name="IDString" />
+    </Key>
+    <Property Name="IDString" Type="int" Nullable="false" />
+    <Property Name="IDRestaurant" Type="int" />
+    <Property Name="IDDish" Type="int" />
+  </EntityType>
+  <EntityType Name="Sensor">
+    <Key>
+      <PropertyRef Name="IDSensor" />
+    </Key>
+    <Property Name="IDSensor" Type="int" Nullable="false" />
+    <Property Name="SensorTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SensorDescription" Type="nvarchar(max)" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Indicator" Type="int" Nullable="false" />
+    <Property Name="IDLegalAct" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Showing">
+    <Key>
+      <PropertyRef Name="IDShowing" />
+    </Key>
+    <Property Name="IDShowing" Type="int" Nullable="false" />
+    <Property Name="IDOrganization" Type="int" />
+    <Property Name="IDEvent" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReleaseDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="DateTimeEvent" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_ArtOrganization_Building">
+    <End Role="Building" Type="Self.Building" Multiplicity="0..1" />
+    <End Role="ArtOrganization" Type="Self.ArtOrganization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Building">
+        <PropertyRef Name="IDBuilding" />
+      </Principal>
+      <Dependent Role="ArtOrganization">
+        <PropertyRef Name="IDBuilding" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Building_Citizen_Building">
+    <End Role="Building" Type="Self.Building" Multiplicity="0..1" />
+    <End Role="Building_Citizen" Type="Self.Building_Citizen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Building">
+        <PropertyRef Name="IDBuilding" />
+      </Principal>
+      <Dependent Role="Building_Citizen">
+        <PropertyRef Name="IDBuiding" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Building_Citizen_Citizen">
+    <End Role="Citizen" Type="Self.Citizen" Multiplicity="0..1" />
+    <End Role="Building_Citizen" Type="Self.Building_Citizen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen">
+        <PropertyRef Name="IDCitizen" />
+      </Principal>
+      <Dependent Role="Building_Citizen">
+        <PropertyRef Name="IDCitizen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Building_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="Building" Type="Self.Building" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="IDOdject" />
+      </Principal>
+      <Dependent Role="Building">
+        <PropertyRef Name="IDObject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Citizen_Sensor_Citizen">
+    <End Role="Citizen" Type="Self.Citizen" Multiplicity="0..1" />
+    <End Role="Citizen_Sensor" Type="Self.Citizen_Sensor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen">
+        <PropertyRef Name="IDCitizen" />
+      </Principal>
+      <Dependent Role="Citizen_Sensor">
+        <PropertyRef Name="IDCitizen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Citizen_Sensor_Sensor">
+    <End Role="Sensor" Type="Self.Sensor" Multiplicity="0..1" />
+    <End Role="Citizen_Sensor" Type="Self.Citizen_Sensor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sensor">
+        <PropertyRef Name="IDSensor" />
+      </Principal>
+      <Dependent Role="Citizen_Sensor">
+        <PropertyRef Name="IDSensor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cook_Restaurant_FamousCooks">
+    <End Role="FamousCooks" Type="Self.FamousCooks" Multiplicity="0..1" />
+    <End Role="Cook_Restaurant" Type="Self.Cook_Restaurant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FamousCooks">
+        <PropertyRef Name="IDFamousCook" />
+      </Principal>
+      <Dependent Role="Cook_Restaurant">
+        <PropertyRef Name="IDCook" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cook_Restaurant_Restaurant">
+    <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
+    <End Role="Cook_Restaurant" Type="Self.Cook_Restaurant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="IDOrganization" />
+      </Principal>
+      <Dependent Role="Cook_Restaurant">
+        <PropertyRef Name="IDRestaurant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Sensor">
+    <End Role="Sensor" Type="Self.Sensor" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sensor">
+        <PropertyRef Name="IDSensor" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="IDSensor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjectHasObject_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="ObjectHasObject" Type="Self.ObjectHasObject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="IDOdject" />
+      </Principal>
+      <Dependent Role="ObjectHasObject">
+        <PropertyRef Name="IDObjectParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjectHasObject_Object1">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="ObjectHasObject" Type="Self.ObjectHasObject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="IDOdject" />
+      </Principal>
+      <Dependent Role="ObjectHasObject">
+        <PropertyRef Name="IDObjectChild" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Performance_ArtBuilding">
+    <End Role="ArtOrganization" Type="Self.ArtOrganization" Multiplicity="0..1" />
+    <End Role="Showing" Type="Self.Showing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArtOrganization">
+        <PropertyRef Name="IDOrganization" />
+      </Principal>
+      <Dependent Role="Showing">
+        <PropertyRef Name="IDOrganization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Performance_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="0..1" />
+    <End Role="Showing" Type="Self.Showing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="IDEvent" />
+      </Principal>
+      <Dependent Role="Showing">
+        <PropertyRef Name="IDEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Restaurant_Building">
+    <End Role="Building" Type="Self.Building" Multiplicity="0..1" />
+    <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Building">
+        <PropertyRef Name="IDBuilding" />
+      </Principal>
+      <Dependent Role="Restaurant">
+        <PropertyRef Name="IDBuilding" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Restaurant_Dish_Dishes">
+    <End Role="Dishes" Type="Self.Dishes" Multiplicity="0..1" />
+    <End Role="Restaurant_Dish" Type="Self.Restaurant_Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dishes">
+        <PropertyRef Name="IDDish" />
+      </Principal>
+      <Dependent Role="Restaurant_Dish">
+        <PropertyRef Name="IDDish" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Restaurant_Dish_Restaurant">
+    <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
+    <End Role="Restaurant_Dish" Type="Self.Restaurant_Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="IDOrganization" />
+      </Principal>
+      <Dependent Role="Restaurant_Dish">
+        <PropertyRef Name="IDRestaurant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SmartCityModelStoreContainer">
+    <EntitySet Name="ArtOrganization" EntityType="Self.ArtOrganization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Building" EntityType="Self.Building" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Building_Citizen" EntityType="Self.Building_Citizen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Citizen" EntityType="Self.Citizen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Citizen_Sensor" EntityType="Self.Citizen_Sensor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cook_Restaurant" EntityType="Self.Cook_Restaurant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dishes" EntityType="Self.Dishes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamousCooks" EntityType="Self.FamousCooks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object" EntityType="Self.Object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObjectHasObject" EntityType="Self.ObjectHasObject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restaurant_Dish" EntityType="Self.Restaurant_Dish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sensor" EntityType="Self.Sensor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Showing" EntityType="Self.Showing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ArtOrganization_Building" Association="Self.FK_ArtOrganization_Building">
+      <End Role="Building" EntitySet="Building" />
+      <End Role="ArtOrganization" EntitySet="ArtOrganization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Building_Citizen_Building" Association="Self.FK_Building_Citizen_Building">
+      <End Role="Building" EntitySet="Building" />
+      <End Role="Building_Citizen" EntitySet="Building_Citizen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Building_Citizen_Citizen" Association="Self.FK_Building_Citizen_Citizen">
+      <End Role="Citizen" EntitySet="Citizen" />
+      <End Role="Building_Citizen" EntitySet="Building_Citizen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Building_Object" Association="Self.FK_Building_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Building" EntitySet="Building" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Citizen_Sensor_Citizen" Association="Self.FK_Citizen_Sensor_Citizen">
+      <End Role="Citizen" EntitySet="Citizen" />
+      <End Role="Citizen_Sensor" EntitySet="Citizen_Sensor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Citizen_Sensor_Sensor" Association="Self.FK_Citizen_Sensor_Sensor">
+      <End Role="Sensor" EntitySet="Sensor" />
+      <End Role="Citizen_Sensor" EntitySet="Citizen_Sensor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cook_Restaurant_FamousCooks" Association="Self.FK_Cook_Restaurant_FamousCooks">
+      <End Role="FamousCooks" EntitySet="FamousCooks" />
+      <End Role="Cook_Restaurant" EntitySet="Cook_Restaurant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cook_Restaurant_Restaurant" Association="Self.FK_Cook_Restaurant_Restaurant">
+      <End Role="Restaurant" EntitySet="Restaurant" />
+      <End Role="Cook_Restaurant" EntitySet="Cook_Restaurant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Sensor" Association="Self.FK_Object_Sensor">
+      <End Role="Sensor" EntitySet="Sensor" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjectHasObject_Object" Association="Self.FK_ObjectHasObject_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="ObjectHasObject" EntitySet="ObjectHasObject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjectHasObject_Object1" Association="Self.FK_ObjectHasObject_Object1">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="ObjectHasObject" EntitySet="ObjectHasObject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Performance_ArtBuilding" Association="Self.FK_Performance_ArtBuilding">
+      <End Role="ArtOrganization" EntitySet="ArtOrganization" />
+      <End Role="Showing" EntitySet="Showing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Performance_Event" Association="Self.FK_Performance_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Showing" EntitySet="Showing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Restaurant_Building" Association="Self.FK_Restaurant_Building">
+      <End Role="Building" EntitySet="Building" />
+      <End Role="Restaurant" EntitySet="Restaurant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Restaurant_Dish_Dishes" Association="Self.FK_Restaurant_Dish_Dishes">
+      <End Role="Dishes" EntitySet="Dishes" />
+      <End Role="Restaurant_Dish" EntitySet="Restaurant_Dish" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Restaurant_Dish_Restaurant" Association="Self.FK_Restaurant_Dish_Restaurant">
+      <End Role="Restaurant" EntitySet="Restaurant" />
+      <End Role="Restaurant_Dish" EntitySet="Restaurant_Dish" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
